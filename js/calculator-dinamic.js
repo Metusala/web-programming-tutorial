@@ -8,7 +8,7 @@ function changeMottoColor(){
 
 motto.onclick = changeMottoColor;
 
-var skills = ['HTML', 'CSS','JS' 'DHTML'];
+var skills = ['HTML', 'CSS','JS','DHTML'];
 
 var greetings = '';
 for (var i = 0; 0 < 4 ;i++ ){
