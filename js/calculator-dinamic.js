@@ -11,7 +11,7 @@ motto.onclick = changeMottoColor;
 var skills = ['HTML', 'CSS','JS','DHTML'];
 
 var greetings = '';
-for (var i = 0; 0 < 4 ;i++ ){
+for (var i = 0; i < skills.length ;i++ ){
     greetings = greetings + 'Felicitari pentru' + skills[i] + ' . ';
 
 
@@ -21,3 +21,21 @@ for (var i = 0; 0 < 4 ;i++ ){
 
 motto.innerHTML = greetings;
 
+
+var topMenu = document.get.ElementById (' top-menu');
+var topMenuLinks = topMenu.getElementsByTagName ('a');
+
+function changeTitle(title) {
+    document.getElementById('breadcrumb').innerHTML = title;
+
+}
+
+for(vari=0; i < topMenuLinks.length;i++) {
+    topMenuLinks[i].onclick = function(){
+        console.info('clicked on link', this);
+        changeTitle(this.innerHTML);
+        return false;
+
+    };
+
+}
