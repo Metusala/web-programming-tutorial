@@ -22,7 +22,7 @@ for (var i = 0; i < skills.length ;i++ ){
 motto.innerHTML = greetings;
 
 
-var topMenu = document.get.ElementById (' top-menu');
+var topMenu = document.getElementById('top-menu');
 var topMenuLinks = topMenu.getElementsByTagName ('a');
 
 function changeTitle(title) {
