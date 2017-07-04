@@ -1,0 +1,6 @@
+[
+  {"firstName":"Nicolae", "lastName": "M",  "phone": "01" },
+  {"firstName":"Cristian","lastName": "S",  "phone":"02"  },
+  {"firstName":"Silviu",  "lastName":  "R", "phone":  "03"},
+  {"firstName": "Ionut",  "lastName":  "A", "phone": "04"}
+]

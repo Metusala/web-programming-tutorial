@@ -26,14 +26,7 @@ var gerRow2 = function( firsName, lastName, phone ){
 
 // matrice
 // Array of arrays
-var contacte = [
-    {firstName:'Nicolae', lastName: 'M', phone: '01' },
-    {firstName:'Cristian', lastName: 'S', phone:'02'  },
-    {firstName:'Silviu', lastName:  'R', phone:  '03'},
-    {firstName: 'Ionut', lastName:  'A',  phone: '04'},
-    {firstName: 'Andrei'  },
-    {lastName: 'Basescu'}
-    ];
+var contacte = [];
 
 var tableContent = '';
 
@@ -43,12 +36,20 @@ function createRow (contact) {
 // for (var i = 0; i< contacte.length; i++){
 //     createRow(contacte[i]);
 
+$.ajax('date/contacte.json').done(function (contacte){
+    console.info('contacte' , contacte);
+    contacte.forEach(createRow);
+    $("#contacts-list tbody").html(tableContent);
 
-contacte.forEach(createRow);
+});
+
+console.info()
 
 
 
-$("#contacts-list tbody").html(tableContent);
+
+
+
 
 
 
