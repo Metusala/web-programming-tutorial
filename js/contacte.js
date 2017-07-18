@@ -1,28 +1,20 @@
 
 
-function getRow(firsName, lastName, phone) {
-    //se poate asa!!
-    if(phone == undefined){
-        phone = '';
-    }
-    // sau asas!!
-    if(typeof lastName == 'undefined'){
-        lastName = '';
-    }
-    //sau asa cu linute sau fara!!
-    // firsName = firsName || '---';
-    firsName = firsName || '---';
-    var row = '<tr> <td>' + lastName + '</td><td>' + (firsName || '') +  '</td><td>'+ phone +'</td></tr>';
+function getRow(contact) {
+    var id = contact.id || '';
+    var phone = contact.phone|| '';
+    var lastName = contact.lastName || '';
+    var firstName = contact.firstName ||  '';
+    var row = '<tr><td>' + lastName + '</td><td>' + (firstName || '') +  '</td><td>'+ phone +'</td>' +
+        '<td>[<a href="date/remove.html?id='+ id +'">x</a>]</td>' +
+        '</tr>';
     return row;
+
+
+
 
 
 }
-var gerRow2 = function( firsName, lastName, phone ){
-    var row = '<tr> <td>' + lastName + '</td><td>' + firsName + '</td><td>'+ phone +'</td></tr>';
-    return row;
-    // identic ca susu, pot fi scrise la fel ca sus sau jos!!!!
-
-};
 
 // matrice
 // Array of arrays
@@ -31,7 +23,7 @@ var contacte = [];
 var tableContent = '';
 
 function createRow (contact) {
-    tableContent += getRow(contact.firstName, contact.lastName, contact.phone);
+    tableContent += getRow(contact);
 }
 // for (var i = 0; i< contacte.length; i++){
 //     createRow(contacte[i]);
@@ -43,15 +35,7 @@ $.ajax('date/contacte.json').done(function (contacte){
 
 });
 
-console.info()
-
-
-
-
-
-
-
-
+console.info();
 
 
 // 1.convert from array of arrats into json
