@@ -3,6 +3,8 @@
     <!--<meta http-equiv="refresh" content="1; url=../contacte.html" />-->
 </head>
 <body>
+
+
 contact remove (<div id="contact-id"></div>)
 
 <script>
