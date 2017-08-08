@@ -12,6 +12,13 @@ function getRow(contact) {
         '</tr>';
     return row;
 
+    return'<tr><td>'+lastName+'</td><td>'+firstName+'</td><td>'+phone+'</td>'+ '' +
+        '<td class="actions">' +
+        '<span><a href="date/remove.html?id=' + id + '">&#x2716</a></span>'+
+        '<span><a href="#">&#x270E</a></span>'+
+        '</td>' +
+        '</tr>0';
+
 
 
 
@@ -31,7 +38,7 @@ function createRow (contact) {
 //     createRow(contacte[i]);
 
 $.ajax('date/contacte.json').done(function (contacte){
-    console.info('contacte' , contacte);
+    console.debug('contacte' , contacte);
     contacte.forEach(createRow);
     $("#contacts-list tbody").html(tableContent);
 
