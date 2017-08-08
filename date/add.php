@@ -4,11 +4,22 @@
 </head>
 <body>
 <?php
+function getNextId(){
+$idString = file_get_contents("last.contact.id");
+    $id = intval($idString);
+    $id++;
+    file_put_contents("last.contact.id", $id);
+    return $id;
+};
 $contentString = file_get_contents("contacte.json");
 $contacte = json_decode($contentString, true);
 
+
+
+$id =getNextId();
+
 $newPerson = array(
-     "id" => 5,//
+     "id" => $id,
     "firstName" => $_GET["firstName"],
     "lastName" => $_GET["lastName"],
     "phone" =>$_GET["phone"]

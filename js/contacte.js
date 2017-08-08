@@ -34,11 +34,14 @@ var tableContent = '';
 function createRow (contact) {
     tableContent += getRow(contact);
 }
-// for (var i = 0; i< contacte.length; i++){
+// for (var i = 0; i< contacte.length; i++)
 //     createRow(contacte[i]);
 
-$.ajax('date/contacte.json').done(function (contacte){
-    console.debug('contacte' , contacte);
+$.ajax('date/contacte.json', {
+    cache: false,
+    dataType: 'json'
+}).done(function (contacte){
+    console.info('contacte' , contacte);
     contacte.forEach(createRow);
     $("#contacts-list tbody").html(tableContent);
 
