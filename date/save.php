@@ -14,17 +14,25 @@ $idString = file_get_contents("last.contact.id");
 $contentString = file_get_contents("contacte.json");
 $contacte = json_decode($contentString, true);
 
+if(true){
+    $id = getNextId();
+
+    $id =getNextId();
+
+    $newPerson = array(
+        "id" => $id,
+        "firstName" => $_GET["firstName"],
+        "lastName" => $_GET["lastName"],
+        "phone" =>$_GET["phone"]
+    );
 
 
-$id =getNextId();
+    $contacte[] =$newPerson;
+}
 
-$newPerson = array(
-     "id" => $id,
-    "firstName" => $_GET["firstName"],
-    "lastName" => $_GET["lastName"],
-    "phone" =>$_GET["phone"]
-);
- $contacte[] =$newPerson;
+
+
+
  $contentString = json_encode($contacte, true);
 file_put_contents("contacte.json", $contentString);
 

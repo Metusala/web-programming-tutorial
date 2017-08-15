@@ -86,11 +86,12 @@
         <div id="content" >
             <div id="breadcrumb">HOME : welcome home</div>
 
-            <form action="date/add.php" id="contact-form">
+            <form action="date/save.php" id="contact-form">
+                <input type="hidden" name= "id" >
                 <input type="text" name="firstName" placeholder="NUME" >
                 <input type="text" name="lastName" placeholder="PRENUME">
                 <input type="text" name="phone" placeholder="TELEFON">
-                <button>add</button>
+                <button>Save</button>
             </form>
 
             <table id="contacts-list" >
